@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="commute-tube  
+commute-tube is your friend on your daily commute. It will download videos of your interest to your USB pen by night so that you&rsquo;re able to watch the program in bus or train. It is basically a configurable wrapper for youtube-dl.
+I made this tool because I was getting a new job with a daily commute via train attached. On that train ride no cellular network nor wifi was available."><meta property="og:title" content="" />
+<meta property="og:description" content="commute-tube  
+commute-tube is your friend on your daily commute. It will download videos of your interest to your USB pen by night so that you&rsquo;re able to watch the program in bus or train. It is basically a configurable wrapper for youtube-dl.
+I made this tool because I was getting a new job with a daily commute via train attached. On that train ride no cellular network nor wifi was available." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snipem.github.io/docs/commute/README/" />
+<meta property="article:published_time" content="2018-04-22T17:23:39+02:00" />
+<meta property="article:modified_time" content="2018-04-22T17:23:39+02:00" />
+<title>R E a D M E | My Projects</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.fd9659ba79459b4d484275976dcfb37feeecc367c71a460cc480a6181acad16c.css" integrity="sha256-/ZZZunlFm01IQnWXbc&#43;zf&#43;7sw2fHGkYMxICmGBrK0Ww=">
+
+
+<script defer src="/en.search.min.1641cd94806f1e59a6b749bbd7c7e71077e2a78814f3a02972e5818284f06ecb.js" integrity="sha256-FkHNlIBvHlmmt0m718fnEHfip4gU86ApcuWBgoTwbss="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer src="/asciidoc_toc_fix.min.58499385d89856294f477ff41bf382768345086326d4789e843c6f841f537de3.js" integrity="sha256-WEmThdiYVilPR3/0G/OCdoNFCGMm1HiehDxvhB9TfeM="></script>
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>My Projects</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><strong>My Projects</strong>
+<ul>
+<li><a href="/docs/commute/README/"class=active>Commute Tube</a></li>
+<li><a href="/docs/psnprices/README/">PSPrices</a></li>
+<li><a href="/docs/maniacforum/README/">Maniacforum</a>
+<br /></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>R E a D M E</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#commute-tube">commute-tube</a>
+      <ul>
+        <li><a href="#installation">Installation</a>
+          <ul>
+            <li><a href="#end-user">End User</a></li>
+            <li><a href="#development">Development</a></li>
+          </ul>
+        </li>
+        <li><a href="#running">Running</a></li>
+        <li><a href="#configuration">Configuration</a>
+          <ul>
+            <li><a href="#pen-section"><code>pen</code> section</a></li>
+            <li><a href="#source-section"><code>source</code> section</a></li>
+          </ul>
+        </li>
+        <li><a href="#best-practices">Best Practices</a>
+          <ul>
+            <li><a href="#running-commute-tube-once-every-night">Running commute-tube once every night</a></li>
+            <li><a href="#synching-a-folder-to-my-laptop-every-morning">Synching a folder to my laptop every morning</a></li>
+            <li><a href="#working-with-a-usb-pen">Working with a USB pen</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="commute-tube">commute-tube</h1>
+<p><a href="https://travis-ci.org/snipem/commute-tube"><img src="https://travis-ci.org/snipem/commute-tube.svg?branch=master" alt="Build Status" /></a>
+<a href="https://coveralls.io/github/snipem/commute-tube?branch=master"><img src="https://coveralls.io/repos/github/snipem/commute-tube/badge.svg?branch=master" alt="Coverage Status" /></a></p>
+<p>commute-tube is your friend on your daily commute. It will download videos of your interest to your USB pen by night so that you&rsquo;re able to watch the program in bus or train. It is basically a configurable wrapper for <a href="https://rg3.github.io/youtube-dl/">youtube-dl</a>.</p>
+<p>I made this tool because I was getting a new job with a daily commute via train attached. On that train ride no cellular network nor wifi was available. Despite wifi was introduced to the trains in the mean time, commute-tube still holds up by giving me instant access to the videos I want to watch without thinking about bandwidth and spinning loading wheels.</p>
+<p>commute-tube is a tool written in Python and should be run in a headless environment such as a server with a USB pen attached. It will look for your USB pen. The only thing that should be done regularly is to plug in your pen after work and catch it before you leave the house.</p>
+<p>Alternatively, it is possible to just download to a folder and synch this folder via rsynch to your laptop or smart device.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="end-user">End User</h3>
+<p>Run <code>pip install commute-tube</code>.</p>
+<h3 id="development">Development</h3>
+<p>Run <code>pip install -e .</code> in the checked out folder.</p>
+<h2 id="running">Running</h2>
+<p>By running <code>commute-tube</code> commute-tube will look for the configuration file (see below) and start downloading to the configured download location.</p>
+<h2 id="configuration">Configuration</h2>
+<p>See the example <a href="../config.example.json"><code>config.json</code></a> file. The configuration is stored in <code>$HOME/.config/commutetube/config.json</code>.</p>
+<p>The file <code>already_downloaded.txt</code> will hold all the files already downloaded. They won`t be downloaded in any following run.</p>
+<h3 id="pen-section"><code>pen</code> section</h3>
+<p>In the pen section you may declare basic settings such as <code>penPath</code> (path to your pen), <code>downloadFolder</code> (the path where files are going be downloaded inside your <code>penPath</code>).</p>
+<h4 id="common-subsection"><code>common</code> subsection</h4>
+<p>The common subsection features settings that should be inheritet by all subsequent sources. Things like maximum download quality should be configured here.</p>
+<h3 id="source-section"><code>source</code> section</h3>
+<p>The source section contains all the various sources you want to download from.  Besides <code>description</code> which contains a description of the source and <code>shellscript</code> all the parameters are basic youtube-dl options. See the <a href="https://github.com/rg3/youtube-dl/blob/master/youtube_dl/YoutubeDL.py">youtube-dl implementation</a> for a detailed overview over the parameters available and how to set them.</p>
+<h4 id="shell-script-support">Shell script support</h4>
+<p>In addition to the youtube-dl wrapper it is possible to set the value <code>shellscript</code> which invokes a shell script or command that you specify and takes the output one line at a time for youtube-dl as input. This is helpful if you want to parse a video source that is not yet supported by youtube-dl.</p>
+<p>For example, by this approach you can write a shellscript onliner which extracts a list of urls that is supported by youtube-dl.</p>
+<p>The output of the shellscript is passed to youtube-dl.</p>
+<h4 id="file-copy-support">File copy support</h4>
+<p>Basic files on your host file system are also supported. Use the <code>path</code> element for specifying a file to the USB pen. In order to avoid re copying of already copied files, files are checked for their checksum.</p>
+<h4 id="changes-to-older-versions">Changes to older versions</h4>
+<p>Both <code>config.json</code> and <code>already_downloaded.txt</code> are now stored in <code>$HOME/.config/commutetube/</code>. Their location can also be changed via command line arguments.</p>
+<h2 id="best-practices">Best Practices</h2>
+<p>Here are some best practices listed that I&rsquo;ve used on my daily commute ever since creating commute-tube.</p>
+<h3 id="running-commute-tube-once-every-night">Running commute-tube once every night</h3>
+<p>For my scenario I&rsquo;ve created a <a href="https://jenkins.io/">Jenkins</a> job that will trigger commute-tube every night at 4 am. The job does also do the following tasks and will upload the log file to an internet resource for me to monitor in case of something went wrong.</p>
+<p>So far I was using two scenarios:</p>
+<ol>
+<li>Synch via wifi</li>
+<li>Copy to USB pen</li>
+</ol>
+<h3 id="synching-a-folder-to-my-laptop-every-morning">Synching a folder to my laptop every morning</h3>
+<p>This one is my preferred way since it takes away the need to deal with a USB pen every day.</p>
+<p>Instead I&rsquo;m waking up my MacBook via a <code>launchd</code> job every morning and synch all the contents of the download folder via <code>rsynch</code>.</p>
+<h3 id="working-with-a-usb-pen">Working with a USB pen</h3>
+<p>Prior to the actual downloading, Jenkins also checks if the USB pen has been plugged in using the <code>commute-tube --check</code> command. If not plugged-in, Jenkins will remind me by sending a push notification to my phone.</p>
+<h4 id="deleting-contents-of-the-usb-pen">Deleting contents of the USB pen</h4>
+<p>Eventually the disk space on your USB pen will run out. In my case I was using a Windows host system for watching the contents on my pen. I wrote a Windows batch file that moves all the contents of the Download folder of the pen to a sub folder called <code>delete</code>.</p>
+<p>The nightly routine for starting commute-tube will then delete all the contents of the <code>delete</code> folder. This will also keep the files on the pen in case of error or when I forget to plug-in the pen.</p>
+<p>Later I was switching over to a more automated process by writing something like this in my Jenkins job:</p>
+<p><code>find /mnt/commute/Download/ -type f -mtime +7 -exec rm -v {} \;</code></p>
+<p>This will delete all files older than 7 days.</p>
+<h4 id="mount-point-for-usb-pen">Mount point for USB pen</h4>
+<p>Best way would be to use a FAT32 formatted USB pen. Since there is a good working and hassle free implementation of FAT32 on almost any Unix machine. At first you should create a mount point with <code>mkdir /mnt/commuteUSB</code> and after that configure <code>/etc/fstab</code>.</p>
+<p>In order to do so, extract the UUID of your USB pen and put it into the <code>/etc/fstab</code> configuration. The user flag will allow any user to mount and unmount the pen by using <code>mount /mnt/commuteUSB</code> or <code>umount /mnt/commuteUSB</code> respectively:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>matze@beatle ~<span style="color:#f92672">]</span>$ sudo blkid
+/dev/sdd1: LABEL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;KINGSTON&#34;</span> UUID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;25E6-B035&#34;</span> TYPE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vfat&#34;</span> PARTUUID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c3072e18-01&#34;</span>
+<span style="color:#f92672">[</span>matze@beatle ~<span style="color:#f92672">]</span>$ cat /etc/fstab
+UUID<span style="color:#f92672">=</span>25E6-B035    /mnt/commuteUSB  vfat   user,noauto,rw,umask<span style="color:#f92672">=</span><span style="color:#ae81ff">000</span>              <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span>
+</code></pre></div><h4 id="mounting-the-usb-pen">Mounting the USB pen</h4>
+<p>In earlier versions commute-tube brang it&rsquo;s own functionality for mounting and unmounting USB pens, I&rsquo;ve found this behaviour rather unreliable compared to native <code>mount mountpoint</code> and <code>umount mountpoint</code> commands of the system. You&rsquo;ll be better of runnign something like:</p>
+<pre><code>mount mountpoint &amp;&amp;
+commute-tube
+unmount mountpoint ||
+echo &quot;Unable to unmount&quot;
+</code></pre>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+
+
+
+  <div class="flex align-right">
+    <a href="https://github.com/snipem/commute-tube/blob/master/README.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+  
+  <div class="flex align-left">
+    <img src="/svg/calendar.svg" class="book-icon" alt="Edit" />
+    
+    <span>Last edit by
+      <a href="mailto:mail@matthias-kuech.de" target="_blank" rel="noopener">
+        Matthias Küch
+      </a> on <a href="https://github.com/snipem/commute-tube/commit/633557f85fab3f91b2154c91949b0eb0e9292be9">Apr 22, 2018</href>
+    </span>
+  </div>
+  
+
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#commute-tube">commute-tube</a>
+      <ul>
+        <li><a href="#installation">Installation</a>
+          <ul>
+            <li><a href="#end-user">End User</a></li>
+            <li><a href="#development">Development</a></li>
+          </ul>
+        </li>
+        <li><a href="#running">Running</a></li>
+        <li><a href="#configuration">Configuration</a>
+          <ul>
+            <li><a href="#pen-section"><code>pen</code> section</a></li>
+            <li><a href="#source-section"><code>source</code> section</a></li>
+          </ul>
+        </li>
+        <li><a href="#best-practices">Best Practices</a>
+          <ul>
+            <li><a href="#running-commute-tube-once-every-night">Running commute-tube once every night</a></li>
+            <li><a href="#synching-a-folder-to-my-laptop-every-morning">Synching a folder to my laptop every morning</a></li>
+            <li><a href="#working-with-a-usb-pen">Working with a USB pen</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

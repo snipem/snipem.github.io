@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on My Projects</title>
+    <link>https://snipem.github.io/docs/</link>
+    <description>Recent content in Docs on My Projects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://snipem.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown Test</title>
+      <link>https://snipem.github.io/docs/monako/test_doc_markdown/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://snipem.github.io/docs/monako/test_doc_markdown/</guid>
+      <description>Markdown Doc 1 Remember these docs have to be commited in order to appear!
+Markdown Doc 2 Link to Website
+Ihr naht euch wieder, schwankende Gestalten! Die früh sich einst dem trüben Blick gezeigt. Versuch’ ich wohl euch diesmal fest zu halten? Fühl’ ich mein Herz noch jenem Wahn geneigt? Ihr drängt euch zu! nun gut, so mögt ihr walten. Wie ihr aus Dunst und Nebel um mich steigt. Mein Busen fühlt sich jugendlich erschüttert.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/monako/README/</link>
+      <pubDate>Sat, 28 Mar 2020 23:27:20 +0100</pubDate>
+      
+      <guid>https://snipem.github.io/docs/monako/README/</guid>
+      <description>monako-test Test Repository for Monako</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/commute/CONTRIBUTE/</link>
+      <pubDate>Thu, 28 Nov 2019 19:57:22 +0100</pubDate>
+      
+      <guid>https://snipem.github.io/docs/commute/CONTRIBUTE/</guid>
+      <description>Contribute Upload to PIP Manual on how to upload to PIP
+This will only work for me as the maintainer:
+make dist  Twine uses the global config file in $HOME/.pypirc
+Setup py Example setup.py
+AutoPep autopep8 &amp;ndash;max-line-length 999 -i commute_tube/commute_tube.py</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/maniacforum/README/</link>
+      <pubDate>Mon, 29 Apr 2019 19:17:30 +0200</pubDate>
+      
+      <guid>https://snipem.github.io/docs/maniacforum/README/</guid>
+      <description>Maniac Forum UI  
+Download Downloads für diverse Betriebssysteme finden sich in den Releases
+Oder alternativ go get github.com/snipem/maniacforum.
+Hilfe Kontext-Steuerung &amp;lt;Tab&amp;gt; - Fokus-Wechsel auf Boards, Threads, Unterthreads und Nachrichten ↑ ↓ - Zur Auswahl im aktuellen ausgewählten Menü ← → - Auswahl des Boards a - Auf Nachricht im Standard-Browser antworten ? - Hilfsseite q - Beenden 0-9 - Links im Standard-Browser öffnen  Globale Steuerung  j - Nächster Unterthread k - Vorheriger Unterthread u - Nächster ungelesener Unterthread z - Nächster Thread J - Nächster Thread K - Vorheriger Thread  Gelesen / Ungelesen Status von Beiträgen maniacforum speichert den Lesestatus von Beiträgen standardmäßig unter $HOME/.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/psnprices/README/</link>
+      <pubDate>Mon, 03 Sep 2018 20:25:23 +0200</pubDate>
+      
+      <guid>https://snipem.github.io/docs/psnprices/README/</guid>
+      <description>gameprices  
+Command line tool for alerting price drops in the Sony PlayStation Network (PSN) and the Nintendo Eshop.
+Description The Sony Entertainment Network (SEN) uses CIDs to identify items in it&amp;rsquo;s catalogue. In order to alert you on the desired price of an SEN you need the CID. Use your Browser (cid GET parameter in URL) or this script (&amp;ndash;search) to retrieve the CID.
+In order to check the price of an item.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/commute/README/</link>
+      <pubDate>Sun, 22 Apr 2018 17:23:39 +0200</pubDate>
+      
+      <guid>https://snipem.github.io/docs/commute/README/</guid>
+      <description>commute-tube  
+commute-tube is your friend on your daily commute. It will download videos of your interest to your USB pen by night so that you&amp;rsquo;re able to watch the program in bus or train. It is basically a configurable wrapper for youtube-dl.
+I made this tool because I was getting a new job with a daily commute via train attached. On that train ride no cellular network nor wifi was available.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/psnprices/CONTRIBUTING/</link>
+      <pubDate>Thu, 19 Apr 2018 17:28:10 +0200</pubDate>
+      
+      <guid>https://snipem.github.io/docs/psnprices/CONTRIBUTING/</guid>
+      <description>Get test coverage py.test \ --tx socket=192.168.178.87:9999 \ --pep8 \ --spec \ --instafail \ --cov=gameprices \ --cov-report html \ gameprices/test  Enable paralell tests
+-n 8  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/commute/LICENSE/</link>
+      <pubDate>Sat, 07 Apr 2018 15:42:33 +0200</pubDate>
+      
+      <guid>https://snipem.github.io/docs/commute/LICENSE/</guid>
+      <description>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007  Copyright (C) 2007 Free Software Foundation, Inc. http://fsf.org/ Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+ Preamble  The GNU General Public License is a free, copyleft license for software and other kinds of works.
+The licenses for most software and other practical works are designed to take away your freedom to share and change the works.</description>
+    </item>
+    
+  </channel>
+</rss>
