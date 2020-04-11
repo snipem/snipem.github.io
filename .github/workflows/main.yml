@@ -16,7 +16,8 @@ jobs:
 
     - name: Get Monako
       run: |
-        curl -s https://github.com/snipem/monako/releases/download/v0.0.12/monako_0.0.12_linux_amd64.tar.gz | tar xvz -
+        wget https://github.com/snipem/monako/releases/download/v0.0.12/monako_0.0.12_linux_amd64.tar.gz
+        tar xvz monako_0.0.12_linux_amd64.tar.gz
         chmod +x monako
 
     - name: Run Monako
