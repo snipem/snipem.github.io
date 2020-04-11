@@ -1,0 +1,1 @@
+var asciidoc_list=$("#toc > ul");if(asciidoc_list.length>0){var right_toc=$("body > main > aside.book-toc")[0];right_toc.innerHTML+="<nav id='TableOfContents'> </nav>";var new_nav=$("body > main > aside.book-toc > nav")[0];new_nav.append(asciidoc_list[0]);$("#toctitle")[0].remove();}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="gameprices  
+Command line tool for alerting price drops in the Sony PlayStation Network (PSN) and the Nintendo Eshop.
+Description The Sony Entertainment Network (SEN) uses CIDs to identify items in it&rsquo;s catalogue. In order to alert you on the desired price of an SEN you need the CID. Use your Browser (cid GET parameter in URL) or this script (&ndash;search) to retrieve the CID.
+In order to check the price of an item."><meta property="og:title" content="" />
+<meta property="og:description" content="gameprices  
+Command line tool for alerting price drops in the Sony PlayStation Network (PSN) and the Nintendo Eshop.
+Description The Sony Entertainment Network (SEN) uses CIDs to identify items in it&rsquo;s catalogue. In order to alert you on the desired price of an SEN you need the CID. Use your Browser (cid GET parameter in URL) or this script (&ndash;search) to retrieve the CID.
+In order to check the price of an item." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snipem.github.io/docs/psnprices/README/" />
+<meta property="article:published_time" content="2018-09-03T20:25:23+02:00" />
+<meta property="article:modified_time" content="2018-09-03T20:25:23+02:00" />
+<title>R E a D M E | My Projects</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.fd9659ba79459b4d484275976dcfb37feeecc367c71a460cc480a6181acad16c.css" integrity="sha256-/ZZZunlFm01IQnWXbc&#43;zf&#43;7sw2fHGkYMxICmGBrK0Ww=">
+
+
+<script defer src="/en.search.min.1641cd94806f1e59a6b749bbd7c7e71077e2a78814f3a02972e5818284f06ecb.js" integrity="sha256-FkHNlIBvHlmmt0m718fnEHfip4gU86ApcuWBgoTwbss="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer src="/asciidoc_toc_fix.min.58499385d89856294f477ff41bf382768345086326d4789e843c6f841f537de3.js" integrity="sha256-WEmThdiYVilPR3/0G/OCdoNFCGMm1HiehDxvhB9TfeM="></script>
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>My Projects</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><strong>My Projects</strong>
+<ul>
+<li><a href="/docs/commute/README/">Commute Tube</a></li>
+<li><a href="/docs/psnprices/README/"class=active>PSPrices</a></li>
+<li><a href="/docs/maniacforum/README/">Maniacforum</a>
+<br /></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>R E a D M E</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#gameprices">gameprices</a>
+      <ul>
+        <li><a href="#description">Description</a>
+          <ul>
+            <li><a href="#eshop-implementation">Eshop implementation</a></li>
+          </ul>
+        </li>
+        <li><a href="#installation">Installation</a>
+          <ul>
+            <li><a href="#install-development-build">Install development build</a></li>
+          </ul>
+        </li>
+        <li><a href="#usage">Usage</a>
+          <ul>
+            <li><a href="#mail-alerting-for-single-alerts-you-define-yourself">Mail alerting for single alerts you define yourself</a></li>
+            <li><a href="#command-line-interface">Command line interface</a></li>
+            <li><a href="#mail-alerting-for-collections-of-price-reductions">Mail alerting for collections of price reductions</a></li>
+          </ul>
+        </li>
+        <li><a href="#example">Example</a>
+          <ul>
+            <li><a href="#mail-alerting---get-a-mail-when-alerts-have-been-met">Mail alerting - Get a mail when alerts have been met</a></li>
+            <li><a href="#searching-for-the-cid-of-an-item">Searching for the CID of an item</a></li>
+            <li><a href="#check-if-desired-price-has-been-met">Check if desired price has been met</a></li>
+          </ul>
+        </li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="gameprices">gameprices</h1>
+<p><a href="https://travis-ci.org/snipem/psnprices"><img src="https://travis-ci.org/snipem/psnprices.svg?branch=master" alt="Build Status" /></a>
+<a href="https://coveralls.io/github/snipem/psnprices?branch=master"><img src="https://coveralls.io/repos/github/snipem/psnprices/badge.svg?branch=master" alt="Coverage Status" /></a></p>
+<p>Command line tool for alerting price drops in the Sony PlayStation Network (PSN) and the Nintendo Eshop.</p>
+<h2 id="description">Description</h2>
+<p>The Sony Entertainment Network (SEN) uses CIDs to identify items in it&rsquo;s catalogue. In order to alert you on the desired price of an SEN you need the CID. Use your Browser (cid GET parameter in URL) or this script (&ndash;search) to retrieve the CID.</p>
+<p>In order to check the price of an item. You need a store identifier. These store identifiers are known to work:</p>
+<ul>
+<li>DE/de (Germany)</li>
+<li>GB/en (Great Britain)</li>
+<li>US/en (United States)</li>
+<li>SE/en (Sweden)</li>
+<li>JP/jp (Japan)</li>
+</ul>
+<p>Prices are always in the local currency. Therefore it is € for DE/de and £ for GB/en. Additionaly, prices are that for PlayStation Plus users.</p>
+<h3 id="eshop-implementation">Eshop implementation</h3>
+<p>The eshop implementation is not yet fully functional and only available in the dvelopment build.</p>
+<h2 id="installation">Installation</h2>
+<p>Use PyPI to install <code>psnprices</code></p>
+<pre><code>pip install psnprices
+</code></pre>
+<p>This will install the Python modules and also the following command line tools</p>
+<pre><code>psncli
+psnmailalert
+psndealsmailalert
+</code></pre>
+<h3 id="install-development-build">Install development build</h3>
+<pre><code>pip install .
+</code></pre>
+<p>This will also install the beta eshop implementation</p>
+<pre><code>eshopcli
+dealsmailalert
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="mail-alerting-for-single-alerts-you-define-yourself">Mail alerting for single alerts you define yourself</h3>
+<p>Just run <code>psnmailalert</code> for mail alerting. See example below. Alerts are set in the <code>alerts.csv</code> file. If no store is set. The german / european store is used as a default.</p>
+<h3 id="command-line-interface">Command line interface</h3>
+<pre><code>usage: psncli [-h] [--id ID] [--store STORE] [--price PRICE] [--query QUERY]
+            [--log]
+
+optional arguments:
+-h, --help            show this help message and exit
+--id ID, -i ID        CID of game to check
+--store STORE, -s STORE
+                        Regional PSN store to check. Default: 'DE/de'
+--price PRICE, -p PRICE
+                        Desired price of game
+--query QUERY, -q QUERY
+                        Name of item to search for
+--log, -l             Write to log file
+</code></pre>
+<h4 id="retrieving-utf-8-encoded-output-on-terminals">Retrieving UTF-8 encoded output on terminals</h4>
+<p>You may have to tell Python that your terminal is capable of dealing with UTF-8 outputs. Some PSN items are annotated with trademark, copyright or foreign language specific symbols. To do so set <code>export PYTHONIOENCODING=utf-8</code> in your terminal window.</p>
+<h3 id="mail-alerting-for-collections-of-price-reductions">Mail alerting for collections of price reductions</h3>
+<p>The PlayStation Network creates collections for price reductions. Run <code>python psndealsmailalert.py</code> for watching those collections and be alerted if there are new reductions. Alerts for collections are set in the <code>alert_deal_containers.csv</code> file.</p>
+<h2 id="example">Example</h2>
+<p>You may run this script with the following command line variants:</p>
+<h3 id="mail-alerting---get-a-mail-when-alerts-have-been-met">Mail alerting - Get a mail when alerts have been met</h3>
+<p>With <code>psnmailalert</code> you may set alerts for price drops in the <code>alerts.csv</code> file. The first value is the CID for the item, the second is the price to be matched in order to alert you by mail, and the second value is the store to search in. You may mix stores in the <code>alerts.csv</code>. After a price has been matched, the alert is removed from <code>alerts.csv</code>. You will not get any further alerts for that item.</p>
+<pre><code>P0001-NPEJ00305_00-B000000000001030,19.00,DE/de
+P0001-NPEJ00305_00-B000000000001030,19.00,DE/de
+EP0102-CUSA02521_00-MEGAMANLEGACY000,7.00
+UP0102-CUSA02516_00-MEGAMANLEGACY000,7.00,US/en
+P0101-ULES01372_00-GPCMETALGE000001,10.00,DE/de
+</code></pre>
+<p>If the store value is left blank, the script tries to extract the store from the beginning character of the CID.</p>
+<p>In order to receive mails you have to set your account settings in the file <code>mailconfig.json</code>. See <code>mailconfig.json_example</code> for an example config.</p>
+<p>To run <code>psnmailalert</code>, just type:</p>
+<pre><code>psnmailalert
+</code></pre>
+<h4 id="example-mail">Example mail</h4>
+<p><img src="https://raw.githubusercontent.com/snipem/psnprices/master/res/mail.png" alt="Mail with alerts" title="Mail with alerts"/></p>
+<h3 id="searching-for-the-cid-of-an-item">Searching for the CID of an item</h3>
+<p>Define the name of a game and the store.</p>
+<pre><code>psncli --query &quot;metal gear solid peace walker&quot; --store DE/de
+</code></pre>
+<p>You will get a result containing one to many search results with the CID. The first output of each search line is the CID, the second the name, the third the supported systems and the last is a description of the item type in the local store language. It is &ldquo;Vollversion&rdquo; here which means &ldquo;full version&rdquo; in German.</p>
+<pre><code>EP0101-ULES01372_00-GPCMETALGE000001    Metal Gear Solid: Peace Walker  PS Vita,PSP®    9.99    GAME
+</code></pre>
+<h3 id="check-if-desired-price-has-been-met">Check if desired price has been met</h3>
+<p>The price is in local currency. As exit statuses render the outcome of the alert, you may send you e-mails or desktop notifications with <code>&amp;&amp;</code> or <code>||</code>. In this example, there is a string printed to the console.</p>
+<pre><code>psncli --id EP0101-ULES01372_00-GPCMETALGE000001 --store DE/de --price 15.00 &amp;&amp;
+echo &quot;Price matched, let's buy Metal Gear Solid PW&quot;
+</code></pre>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>This script is not associated with Sony, Sony PlayStation, the PlayStation Network in any kind. It consumes an public interface that is publicly advertised to the browser to list store contents.</p>
+<p>This script is not associated with Nintendo, Nintendo Switch, or the Nintendo Eshop in any kind. It consumes an public interface that is publicly advertised to the browser to list store contents.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+
+
+
+  <div class="flex align-right">
+    <a href="https://github.com/snipem/psnprices/blob/master/README.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+  
+  <div class="flex align-left">
+    <img src="/svg/calendar.svg" class="book-icon" alt="Edit" />
+    
+    <span>Last edit by
+      <a href="mailto:mail@matthias-kuech.de" target="_blank" rel="noopener">
+        Matthias Küch
+      </a> on <a href="https://github.com/snipem/psnprices/commit/774fb3600722f4e11fdfc86777613ee4ef862337">Sep 3, 2018</href>
+    </span>
+  </div>
+  
+
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#gameprices">gameprices</a>
+      <ul>
+        <li><a href="#description">Description</a>
+          <ul>
+            <li><a href="#eshop-implementation">Eshop implementation</a></li>
+          </ul>
+        </li>
+        <li><a href="#installation">Installation</a>
+          <ul>
+            <li><a href="#install-development-build">Install development build</a></li>
+          </ul>
+        </li>
+        <li><a href="#usage">Usage</a>
+          <ul>
+            <li><a href="#mail-alerting-for-single-alerts-you-define-yourself">Mail alerting for single alerts you define yourself</a></li>
+            <li><a href="#command-line-interface">Command line interface</a></li>
+            <li><a href="#mail-alerting-for-collections-of-price-reductions">Mail alerting for collections of price reductions</a></li>
+          </ul>
+        </li>
+        <li><a href="#example">Example</a>
+          <ul>
+            <li><a href="#mail-alerting---get-a-mail-when-alerts-have-been-met">Mail alerting - Get a mail when alerts have been met</a></li>
+            <li><a href="#searching-for-the-cid-of-an-item">Searching for the CID of an item</a></li>
+            <li><a href="#check-if-desired-price-has-been-met">Check if desired price has been met</a></li>
+          </ul>
+        </li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
