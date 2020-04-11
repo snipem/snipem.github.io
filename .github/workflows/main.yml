@@ -3,9 +3,9 @@ name: Build Page with Monako
 
 on:
   push:
-    branches: [ master ]
+    branches: [ source ]
   pull_request:
-    branches: [ master ]
+    branches: [ source ]
 
 jobs:
   build:
