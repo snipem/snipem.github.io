@@ -23,9 +23,9 @@ jobs:
     - name: Run Monako
       run: ./monako
 
-    - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v1.4.0
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        build_dir: compose/public
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./compose/public
+        publish_branch: master  # deploying branch
