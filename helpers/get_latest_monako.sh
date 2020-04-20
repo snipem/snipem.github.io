@@ -11,6 +11,6 @@ get_latest_release() {
 
 latest_release=$(get_latest_release)
 
-curl "https://github.com/snipem/monako/releases/download/v${latest_release}/monako_${latest_release}_linux_amd64.tar.gz" -o monako.tar.gz
-tar xvf "monako.tar.gz"
+wget "https://github.com/snipem/monako/releases/download/v${latest_release}/monako_${latest_release}_linux_amd64.tar.gz"
+tar xvf "monako_${latest_release}_linux_amd64.tar.gz"
 chmod +x monako
