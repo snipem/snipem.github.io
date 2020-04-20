@@ -1,7 +1,7 @@
 ---
   baseURL : "https://snipem.github.io"
   title : "My Projects"
-  # logo : "docs/monako/profile.png"
+  logo : "docs/monako/assets/logo/profile.png"
 
   disableCommitInfo: false
 
@@ -15,10 +15,13 @@
 
   origins:
 
-  - src: https://github.com/snipem/monako-test
+  - src: https://github.com/snipem/monako
     branch: master
     docdir: .
     targetdir: docs/monako
+    whitelist:
+      - "README.md"
+      - ".png"
 
   - src: https://github.com/snipem/commute-tube
     branch: master
@@ -35,3 +38,24 @@
     docdir: .
     targetdir: docs/maniacforum
 
+# Alfred Workflows
+
+  - src: https://github.com/snipem/alfred-fandom
+    branch: master
+    docdir: .
+    targetdir: docs/alfred-fandom
+
+  - src: https://github.com/snipem/alfred-spotify
+    branch: master
+    docdir: .
+    targetdir: docs/alfred-spotify
+
+  - src: https://github.com/snipem/alfred-dazn
+    branch: master
+    docdir: .
+    targetdir: docs/alfred-dazn
+
+  - src: https://github.com/snipem/alfred-deezer
+    branch: master
+    docdir: .
+    targetdir: docs/alfred-deezer
