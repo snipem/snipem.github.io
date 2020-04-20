@@ -5,29 +5,21 @@
     <link>https://snipem.github.io/</link>
     <description>Recent content on My Projects</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 21:11:57 +0200</lastBuildDate>
     
 	<atom:link href="https://snipem.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Markdown Test</title>
-      <link>https://snipem.github.io/docs/monako/test_doc_markdown/</link>
-      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://snipem.github.io/docs/monako/test_doc_markdown/</guid>
-      <description>Markdown Doc 1 Remember these docs have to be commited in order to appear!
-Markdown Doc 2 Link to Website
-Ihr naht euch wieder, schwankende Gestalten! Die früh sich einst dem trüben Blick gezeigt. Versuch’ ich wohl euch diesmal fest zu halten? Fühl’ ich mein Herz noch jenem Wahn geneigt? Ihr drängt euch zu! nun gut, so mögt ihr walten. Wie ihr aus Dunst und Nebel um mich steigt. Mein Busen fühlt sich jugendlich erschüttert.</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>https://snipem.github.io/docs/monako/README/</link>
-      <pubDate>Sat, 28 Mar 2020 23:27:20 +0100</pubDate>
+      <pubDate>Sun, 12 Apr 2020 21:11:57 +0200</pubDate>
       
       <guid>https://snipem.github.io/docs/monako/README/</guid>
-      <description>monako-test Test Repository for Monako</description>
+      <description>monako    
+ A less opinionated document aggregator and publisher. Easier to use and to adapt than Antora, Hugo, JBake and the likes.
+ Purpose Monako abstracts the complexity of collecting documentation from a configurable amount of Git repositories (origins).
+Monako uses Hugo as a static site generator but hides it to the user. It also uses the great Hugo Book Theme which I forked at Monako Book.</description>
     </item>
     
     <item>
@@ -45,6 +37,29 @@ AutoPep autopep8 &amp;ndash;max-line-length 999 -i commute_tube/commute_tube.py<
     
     <item>
       <title></title>
+      <link>https://snipem.github.io/docs/alfred-fandom/README/</link>
+      <pubDate>Sun, 13 Oct 2019 13:19:55 +0200</pubDate>
+      
+      <guid>https://snipem.github.io/docs/alfred-fandom/README/</guid>
+      <description>alfred-fandom Simple workflow for Fandom
+Requirements jq
+Install with brew install jq</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/alfred-spotify/README/</link>
+      <pubDate>Thu, 10 Oct 2019 20:50:38 +0200</pubDate>
+      
+      <guid>https://snipem.github.io/docs/alfred-spotify/README/</guid>
+      <description>Alfred-Spotify Alfred-Spotify searches for tracks (Keyword: sp) and albums (spa).
+Download See Releases.
+Setup You will have to setup Spotify API tokens as SPOTIFY_ID and SPOTIFY_SECRET environment variables in the imported workflow. You can obtain the tokens from this site.
+Currently the default action is to call a custom made Bose Soundtouch script of mine to enqueue the song to the device. You may change the default behaviour to just open the url, like it is currently bound to the alt action.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://snipem.github.io/docs/maniacforum/README/</link>
       <pubDate>Mon, 29 Apr 2019 19:17:30 +0200</pubDate>
       
@@ -57,6 +72,15 @@ Hilfe Kontext-Steuerung &amp;lt;Tab&amp;gt; - Fokus-Wechsel auf Boards, Threads,
     
     <item>
       <title></title>
+      <link>https://snipem.github.io/docs/alfred-dazn/README/</link>
+      <pubDate>Sun, 24 Mar 2019 13:30:15 +0100</pubDate>
+      
+      <guid>https://snipem.github.io/docs/alfred-dazn/README/</guid>
+      <description>Alfred-DAZN Description Simple DAZN Schedule listing for Parsing through Alfred</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://snipem.github.io/docs/psnprices/README/</link>
       <pubDate>Mon, 03 Sep 2018 20:25:23 +0200</pubDate>
       
@@ -65,6 +89,17 @@ Hilfe Kontext-Steuerung &amp;lt;Tab&amp;gt; - Fokus-Wechsel auf Boards, Threads,
 Command line tool for alerting price drops in the Sony PlayStation Network (PSN) and the Nintendo Eshop.
 Description The Sony Entertainment Network (SEN) uses CIDs to identify items in it&amp;rsquo;s catalogue. In order to alert you on the desired price of an SEN you need the CID. Use your Browser (cid GET parameter in URL) or this script (&amp;ndash;search) to retrieve the CID.
 In order to check the price of an item.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://snipem.github.io/docs/alfred-deezer/README/</link>
+      <pubDate>Tue, 31 Jul 2018 23:48:14 +0200</pubDate>
+      
+      <guid>https://snipem.github.io/docs/alfred-deezer/README/</guid>
+      <description>Alfred-Deezer Alfred-Deezer searches for tracks (Keyword: h) and albums (da).
+Download See Releases.
+Setup for Development See deezer-cli on how to setup deezer-cli which is included to the workflow.</description>
     </item>
     
     <item>

@@ -4,18 +4,24 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="monako-test Test Repository for Monako"><meta property="og:title" content="" />
-<meta property="og:description" content="monako-test Test Repository for Monako" />
+<meta name="description" content="monako    
+ A less opinionated document aggregator and publisher. Easier to use and to adapt than Antora, Hugo, JBake and the likes.
+ Purpose Monako abstracts the complexity of collecting documentation from a configurable amount of Git repositories (origins).
+Monako uses Hugo as a static site generator but hides it to the user. It also uses the great Hugo Book Theme which I forked at Monako Book."><meta property="og:title" content="" />
+<meta property="og:description" content="monako    
+ A less opinionated document aggregator and publisher. Easier to use and to adapt than Antora, Hugo, JBake and the likes.
+ Purpose Monako abstracts the complexity of collecting documentation from a configurable amount of Git repositories (origins).
+Monako uses Hugo as a static site generator but hides it to the user. It also uses the great Hugo Book Theme which I forked at Monako Book." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snipem.github.io/docs/monako/README/" />
-<meta property="article:published_time" content="2020-03-28T23:27:20+01:00" />
-<meta property="article:modified_time" content="2020-03-28T23:27:20+01:00" />
+<meta property="article:published_time" content="2020-04-12T21:11:57+02:00" />
+<meta property="article:modified_time" content="2020-04-12T21:11:57+02:00" />
 <title>R E a D M E | My Projects</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.fd9659ba79459b4d484275976dcfb37feeecc367c71a460cc480a6181acad16c.css" integrity="sha256-/ZZZunlFm01IQnWXbc&#43;zf&#43;7sw2fHGkYMxICmGBrK0Ww=">
 
 
-<script defer src="/en.search.min.1641cd94806f1e59a6b749bbd7c7e71077e2a78814f3a02972e5818284f06ecb.js" integrity="sha256-FkHNlIBvHlmmt0m718fnEHfip4gU86ApcuWBgoTwbss="></script>
+<script defer src="/en.search.min.3be6b0670690c07d2f5b149aaf61e5d55eb891051b26fdfc7da9f945ceaa41a9.js" integrity="sha256-O&#43;awZwaQwH0vWxSar2Hl1V64kQUbJv38fan5Rc6qQak="></script>
 
 <!--
 Made with Book Theme
@@ -34,7 +40,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav>
 <h2 class="book-brand">
-  <a href="/"><span>My Projects</span>
+  <a href="/"><img src="/docs/monako/assets/logo/profile.png" alt="Logo" /><span>My Projects</span>
   </a>
 </h2>
 
@@ -60,11 +66,19 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/commute/README/">Commute Tube</a></li>
 <li><a href="/docs/psnprices/README/">PSPrices</a></li>
-<li><a href="/docs/maniacforum/README/">Maniacforum</a>
-<br /></li>
+<li><a href="/docs/maniacforum/README/">Maniacforum</a></li>
+<li><strong>Alfred Workflows</strong>
+<ul>
+<li><a href="/docs/alfred-dazn/README/">Dazn</a></li>
+<li><a href="/docs/alfred-deezer/README/">Deezer</a></li>
+<li><a href="/docs/alfred-spotify/README/">Spotify</a></li>
+<li><a href="/docs/alfred-fandom/README/">Fandom</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<p><br /></p>
 
 
 
@@ -108,7 +122,25 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#monako-test">monako-test</a></li>
+    <li><a href="#monako">monako</a>
+      <ul>
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#how-monako-works">How Monako works</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#configuration">Configuration</a>
+          <ul>
+            <li><a href="#configuration-of-origins">Configuration of Origins</a></li>
+            <li><a href="#configuration-of-menus">Configuration of Menus</a></li>
+            <li><a href="#configuration-of-documents">Configuration of Documents</a></li>
+            <li><a href="#screenshot">Screenshot</a></li>
+          </ul>
+        </li>
+        <li><a href="#design-goals">Design Goals</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#development">Development</a></li>
+        <li><a href="#improvements">Improvements</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -120,8 +152,99 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="monako-test">monako-test</h1>
-<p>Test Repository for Monako</p>
+  <article class="markdown"><h1 id="monako">monako</h1>
+<p><img src="https://github.com/snipem/monako/workflows/Build%25!M%28MISSING%29onako/badge.svg?branch=develop" alt="Build Monako" />
+<a href="https://codecov.io/gh/snipem/monako"><img src="https://codecov.io/gh/snipem/monako/branch/master/graph/badge.svg" alt="codecov" /></a>
+<a href="https://goreportcard.com/report/github.com/snipem/monako"><img src="https://goreportcard.com/badge/github.com/snipem/monako" alt="Go Report Card" /></a>
+<a href="https://godoc.org/github.com/snipem/monako"><img src="https://godoc.org/github.com/snipem/monako?status.svg" alt="GoDoc" /></a>
+<a href="https://codeclimate.com/github/snipem/monako/maintainability"><img src="https://api.codeclimate.com/v1/badges/1ff16e0c4f8a871bfac3/maintainability" alt="Maintainability" /></a></p>
+<p><img src="https://github.com/snipem/monako/raw/master/assets/logo/cover.png" alt="monako logo" /></p>
+<hr>
+<p>A less opinionated document aggregator and publisher. Easier to use and to adapt than Antora, Hugo, JBake and the likes.</p>
+<hr>
+<h2 id="purpose">Purpose</h2>
+<p>Monako abstracts the complexity of collecting documentation from a configurable amount of Git repositories (origins).</p>
+<p>Monako uses <a href="https://gohugo.io">Hugo</a> as a static site generator but hides it to the user. It also uses the great <a href="https://github.com/alex-shpak/hugo-book">Hugo Book Theme</a> which I forked at <a href="https://github.com/snipem/monako-book">Monako Book</a>.</p>
+<h2 id="how-monako-works">How Monako works</h2>
+<p><img src="https://github.com/snipem/monako/raw/master/assets/monako.png" alt="How Monako works" /></p>
+<h2 id="usage">Usage</h2>
+<pre><code class="language-help" data-lang="help">$ monako -h
+Usage of monako:
+  -base-url string
+        Custom base URL
+  -config string
+        Configuration file (default &quot;config.monako.yaml&quot;)
+  -fail-on-error
+        Fail on document conversion errors
+  -menu-config string
+        Menu file for monako-book theme (default &quot;config.menu.md&quot;)
+  -only-compose
+        Only compose the Monako structure
+  -only-generate
+        Only generate HTML files from an existing Monako structure
+  -trace
+        Enable trace logging
+</code></pre><p>A Docker image is available from <a href="https://hub.docker.com/repository/docker/snipem/monako">Dockerhub</a>.</p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="configuration-of-origins">Configuration of Origins</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+  <span style="color:#66d9ef">baseURL </span>: <span style="color:#e6db74">&#34;https://example.com/&#34;</span>
+  <span style="color:#66d9ef">title </span>: <span style="color:#e6db74">&#34;My Projects&#34;</span>
+
+  <span style="color:#66d9ef">whitelist</span>:
+    - <span style="color:#e6db74">&#34;.md&#34;</span>
+    - <span style="color:#e6db74">&#34;.adoc&#34;</span>
+    - <span style="color:#e6db74">&#34;.jpg&#34;</span>
+    - <span style="color:#e6db74">&#34;.svg&#34;</span>
+    - <span style="color:#e6db74">&#34;.png&#34;</span>
+
+  <span style="color:#66d9ef">origins</span>:
+  - <span style="color:#66d9ef">src</span>: https://github.com/snipem/commute-tube
+    <span style="color:#66d9ef">branch</span>: master
+    <span style="color:#66d9ef">docdir</span>: .
+    <span style="color:#66d9ef">targetdir</span>: docs/commute
+
+  - <span style="color:#66d9ef">src</span>: https://github.com/snipem/monako
+    <span style="color:#66d9ef">branch</span>: develop
+    <span style="color:#66d9ef">docdir</span>: doc
+    <span style="color:#66d9ef">targetdir</span>: docs/monako
+</code></pre></div><h3 id="configuration-of-menus">Configuration of Menus</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="color:#66d9ef">-</span> **My Projects**
+  <span style="color:#66d9ef">-</span> [<span style="color:#f92672">Commute Tube</span>](<span style="color:#a6e22e">..//docs/commute/README/</span>)
+  <span style="color:#66d9ef">-</span> [<span style="color:#f92672">Monako</span>](<span style="color:#a6e22e">..//docs/monako/README/</span>)
+  ...
+</code></pre></div><h3 id="configuration-of-documents">Configuration of Documents</h3>
+<p>Monako supports all <a href="https://gohugo.io/content-management/front-matter/">Hugo Frontmatter</a> types (YAML, TOML and JSON).
+Monako converts them to YAML.</p>
+<p>Add frontmatter as you wish at long as it&rsquo;s supported by Hugo and the Theme.</p>
+<h4 id="monako-specific-options">Monako specific options</h4>
+<p>Hide Git links like &ldquo;edit this page&rdquo; and &ldquo;last edit by&rdquo;. Add this line to the frontmatter of the document:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">MonakoGitLinks = <span style="color:#66d9ef">false</span>
+</code></pre></div><h3 id="screenshot">Screenshot</h3>
+<p><img src="https://github.com/snipem/monako/raw/master/assets/screenshot.png" alt="Screenshot of a documentation site built with Monako" /></p>
+<h2 id="design-goals">Design Goals</h2>
+<ul>
+<li>Make it simple and stupid, single binary with no dependencies ✓</li>
+<li>Git clone existing repositories ✓
+<ul>
+<li>Don&rsquo;t attempt to change their structure ✓</li>
+<li>Transform all documents below a specific structure ✓</li>
+</ul>
+</li>
+<li>Use Antora like configuration file for main structure ✓</li>
+<li>Support Mermaid ✓</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>Multi repository document fetching</li>
+<li>Bundled dependencies (minus Asciidoctor)</li>
+</ul>
+<h2 id="development">Development</h2>
+<p>Init with <code>make init</code></p>
+<h2 id="improvements">Improvements</h2>
+<ul>
+<li>Support edit this page links with links to origin repository. Book theme provides a <a href="https://github.com/alex-shpak/hugo-book/search?q=BookRepo&amp;unscoped_q=BookRepo">similar feature</a>.</li>
+</ul>
 </article>
  
       
@@ -138,7 +261,7 @@ https://github.com/alex-shpak/hugo-book
 
 
   <div class="flex align-right">
-    <a href="https://github.com/snipem/monako-test/blob/master/README.md" target="_blank" rel="noopener">
+    <a href="https://github.com/snipem/monako/blob/master/README.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
@@ -150,8 +273,8 @@ https://github.com/alex-shpak/hugo-book
     
     <span>Last edit by
       <a href="mailto:mail@matthias-kuech.de" target="_blank" rel="noopener">
-        snipem
-      </a> on <a href="https://github.com/snipem/monako-test/commit/0e553d42d8389af0d61c371e7c0edeb04e20cd3f">Mar 28, 2020</a>
+        Matthias Küch
+      </a> on <a href="https://github.com/snipem/monako/commit/82b081630d7b39d342bdcc5360046946eea8a283">Apr 12, 2020</a>
     </span>
   </div>
   
@@ -178,7 +301,25 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#monako-test">monako-test</a></li>
+    <li><a href="#monako">monako</a>
+      <ul>
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#how-monako-works">How Monako works</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#configuration">Configuration</a>
+          <ul>
+            <li><a href="#configuration-of-origins">Configuration of Origins</a></li>
+            <li><a href="#configuration-of-menus">Configuration of Menus</a></li>
+            <li><a href="#configuration-of-documents">Configuration of Documents</a></li>
+            <li><a href="#screenshot">Screenshot</a></li>
+          </ul>
+        </li>
+        <li><a href="#design-goals">Design Goals</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#development">Development</a></li>
+        <li><a href="#improvements">Improvements</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
