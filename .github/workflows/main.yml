@@ -15,10 +15,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Get Monako
-      run: |
-        wget https://github.com/snipem/monako/releases/download/v0.0.12/monako_0.0.12_linux_amd64.tar.gz
-        tar xvf monako_0.0.12_linux_amd64.tar.gz
-        chmod +x monako
+      run: scripts/get_latest_monako.sh
 
     - name: Run Monako
       run: ./monako
